@@ -38,7 +38,14 @@
             aria-label="Accordion Control Group Buttons"
           >
             <li class="faq-listing__item">
-              <button class="faq-listing__button resetBtn" type="button">
+              <button
+                class="faq-listing__button resetBtn active"
+                type="button"
+                data-expander-toggle
+                aria-controls="content-1"
+                aria-expanded="true"
+                id="accordion-control-1"
+              >
                 <span>
                   FAQs What is Frontend Mentor, and how will it help me?
                 </span>
@@ -55,30 +62,142 @@
                 />
               </button>
 
-              <div class="faq-listing__content">
+              <div
+                class="faq-listing__content active"
+                aria-hidden="false"
+                id="content-1"
+              >
                 <p>
-                    Frontend Mentor offers realistic coding challenges to help developers
-                    improve their frontend coding skills with projects in HTML, CSS, and
-                    JavaScript. It's suitable for all levels and ideal for portfolio
-                    building.
+                  Frontend Mentor offers realistic coding challenges to help
+                  developers improve their frontend coding skills with projects
+                  in HTML, CSS, and JavaScript. It's suitable for all levels and
+                  ideal for portfolio building.
                 </p>
               </div>
             </li>
-            
+
+            <li class="faq-listing__item">
+              <button
+                class="faq-listing__button resetBtn"
+                type="button"
+                data-expander-toggle
+                aria-controls="content-2"
+                aria-expanded="false"
+                id="accordion-control-2"
+              >
+                <span> Is Frontend Mentor free? </span>
+                <img
+                  class="faq-listing__icon close"
+                  src="./assets/images/icon-minus.svg"
+                  alt=""
+                />
+
+                <img
+                  class="faq-listing__icon open"
+                  src="./assets/images/icon-plus.svg"
+                  alt=""
+                />
+              </button>
+
+              <div
+                class="faq-listing__content"
+                aria-hidden="true"
+                id="content-2"
+              >
+                <p>
+                  Yes, Frontend Mentor offers both free and premium coding
+                  challenges, with the free option providing access to a range
+                  of projects suitable for all skill levels.
+                </p>
+              </div>
+            </li>
+
+            <li class="faq-listing__item">
+              <button
+                class="faq-listing__button resetBtn"
+                type="button"
+                data-expander-toggle
+                aria-controls="content-3"
+                aria-expanded="false"
+                id="accordion-control-3"
+              >
+                <span>
+                  Can I use Frontend Mentor projects in my portfolio?
+                </span>
+                <img
+                  class="faq-listing__icon close"
+                  src="./assets/images/icon-minus.svg"
+                  alt=""
+                />
+
+                <img
+                  class="faq-listing__icon open"
+                  src="./assets/images/icon-plus.svg"
+                  alt=""
+                />
+              </button>
+
+              <div
+                class="faq-listing__content"
+                aria-hidden="true"
+                id="content-3"
+              >
+                <p>
+                  Yes, you can use projects completed on Frontend Mentor in your
+                  portfolio. It's an excellent way to showcase your skills to
+                  potential employers!
+                </p>
+              </div>
+            </li>
+
+            <li class="faq-listing__item">
+              <button
+                class="faq-listing__button resetBtn"
+                type="button"
+                data-expander-toggle
+                aria-controls="content-4"
+                aria-expanded="false"
+                id="accordion-control-4"
+              >
+                <span>
+                  How can I get help if I'm stuck on a Frontend Mentor
+                  challenge?
+                </span>
+                <img
+                  class="faq-listing__icon close"
+                  src="./assets/images/icon-minus.svg"
+                  alt=""
+                />
+
+                <img
+                  class="faq-listing__icon open"
+                  src="./assets/images/icon-plus.svg"
+                  alt=""
+                />
+              </button>
+
+              <div
+                class="faq-listing__content"
+                aria-hidden="true"
+                id="content-4"
+              >
+                <p>
+                  The best place to get help is inside Frontend Mentor's Discord
+                  community. There's a help channel where you can ask questions
+                  and seek support from other community members.
+                </p>
+              </div>
+            </li>
           </ul>
+        </div>
+      </div>
 
-          <!-- text -->
-
-            Is Frontend Mentor free? Yes, Frontend Mentor offers both
-          free and premium coding challenges, with the free option providing
-          access to a range of projects suitable for all skill levels. Can I use
-          Frontend Mentor projects in my portfolio? Yes, you can use projects
-          completed on Frontend Mentor in your portfolio. It's an excellent way
-          to showcase your skills to potential employers! How can I get help if
-          I'm stuck on a Frontend Mentor challenge? The best place to get help
-          is inside Frontend Mentor's Discord community. There's a help channel
-          where you can ask questions and seek support from other community
-          members.
+      <div class="container">
+        <div class="faq-check-box">
+          <input type="checkbox" name="faq-checker" id="faq-checker" />
+          <label for="faq-checker" class="faq-check">
+            Have only one accordion open?
+          </label>
         </div>
       </div>
     </main>

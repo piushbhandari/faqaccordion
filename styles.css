@@ -21,8 +21,8 @@
   --primary-font: "Work Sans", sans-serif;
 
   /* transitions */
-  --transition1: all 0.3s ease-in-out;
-  --transition2: all 0.5s ease-in-out;
+  --transition1: all 0.4s ease-in-out;
+  --transition2: all 0.9s ease-in-out;
 }
 
 /* variables */
@@ -105,7 +105,7 @@ h2,
 h3,
 h4,
 h5,
-h6 { 
+h6 {
 }
 /*
       9. Create a root stacking context
@@ -487,17 +487,16 @@ a {
 }
 /* faq card */
 body {
-  background: var(--color-primary);
+  background: var(--color-primary); 
 }
-.site-header{
-  
+.site-header {
 }
 .site-header__bg.desktop {
   display: none;
 }
 .site-header__bg.mobile {
-   height: 232px;
-  }
+  height: 232px;
+}
 .site-main {
   margin-top: -89.5px;
   position: relative;
@@ -508,8 +507,6 @@ body {
   border-radius: 16px;
   box-shadow: 0px 32px 56px 0px rgba(80, 0, 118, 0.1);
   padding: 24px;
-  /* temp */
-  min-height: 565px;
 }
 .faq-box__title {
   font-size: 3.2rem;
@@ -552,14 +549,30 @@ body {
 .faq-listing__button:hover span {
   color: var(--color-secondary);
 }
+.faq-listing__button:focus .faq-listing__icon,
+.faq-listing__button:hover .faq-listing__icon {
+  transform: rotate(360deg);
+}
 .faq-listing__icon {
   flex-shrink: 0;
+  transition: var(--transition2);
 }
 .faq-listing__icon.close {
   display: none;
 }
+.faq-listing__button.active .faq-listing__icon.close {
+  display: flex;
+}
+.faq-listing__button.active .faq-listing__icon.open {
+  display: none;
+}
 .faq-listing__content {
   margin-top: 24px;
+  display: none;
+  transition: var(--transition1);
+}
+.faq-listing__content.active {
+  display: block;
 }
 .faq-listing__content p {
   color: var(--color-tertiary);
@@ -568,6 +581,16 @@ body {
 }
 .faq-listing__content p:last-child {
   margin: 0;
+}
+.faq-check-box{
+    margin: 50px 0;
+    display: flex;
+    gap: 5px;
+    justify-content: flex-end;
+
+}
+.faq-check{
+    cursor: pointer;
 }
 @media all and (min-width: 48em) {
   .site-header__bg.mobile {
