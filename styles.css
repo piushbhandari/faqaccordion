@@ -1,10 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
 /* variables */
 :root {
   /* colors */
-  --color-base: #02073e;
+  --color-base: #301534;
   --color-black: black;
   --color-white: white;
   --color-primary: #f8eeff;
+  --color-secondary: #ad28eb;
+  --color-tertiary: #8b6990;
 
   /* containers */
   --container-default: 64.8rem;
@@ -14,7 +18,7 @@
   --container-gutter: 2.4rem;
 
   /* fonts */
-  --primary-font: "DM Sans", sans-serif;
+  --primary-font: "Work Sans", sans-serif;
 
   /* transitions */
   --transition1: all 0.3s ease-in-out;
@@ -40,8 +44,6 @@
 * {
   margin: 0;
   padding: 0;
-  overflow-wrap: break-word;
-  hyphens: auto;
   font: inherit;
   font-family: var(--primary-font);
   color: var(--color-base);
@@ -103,9 +105,7 @@ h2,
 h3,
 h4,
 h5,
-h6 {
-  overflow-wrap: break-word;
-  hyphens: auto;
+h6 { 
 }
 /*
       9. Create a root stacking context
@@ -235,7 +235,17 @@ a:focus {
   opacity: 1;
   transform: translateY(0) scale(1);
 }
-
+.resetBtn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+.resetList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
 .sr-only:not(:focus):not(:active) {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
@@ -479,9 +489,15 @@ a {
 body {
   background: var(--color-primary);
 }
+.site-header{
+  
+}
 .site-header__bg.desktop {
   display: none;
 }
+.site-header__bg.mobile {
+   height: 232px;
+  }
 .site-main {
   margin-top: -89.5px;
   position: relative;
@@ -507,12 +523,59 @@ body {
   width: 24px;
   height: 24px;
 }
+.faq-listing {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.faq-listing__item {
+  border-bottom: 1px solid var(--color-primary);
+  padding-bottom: 20px;
+}
+.faq-listing__item:last-child {
+  border: none;
+  padding: 0;
+}
+.faq-listing__button {
+  display: flex;
+  gap: 24px;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+  width: 100%;
+  font-weight: 600;
+  font-size: 1.8rem;
+  line-height: normal;
+  color: var(--color-base);
+}
+.faq-listing__button:focus span,
+.faq-listing__button:hover span {
+  color: var(--color-secondary);
+}
+.faq-listing__icon {
+  flex-shrink: 0;
+}
+.faq-listing__icon.close {
+  display: none;
+}
+.faq-listing__content {
+  margin-top: 24px;
+}
+.faq-listing__content p {
+  color: var(--color-tertiary);
+  line-height: 150%;
+  font-size: 1.4rem;
+}
+.faq-listing__content p:last-child {
+  margin: 0;
+}
 @media all and (min-width: 48em) {
   .site-header__bg.mobile {
     display: none;
   }
   .site-header__bg.desktop {
     display: block;
+    height: 320px;
   }
   .site-main {
     margin-top: -152.5px;
@@ -527,5 +590,18 @@ body {
   .faq-box__title-star {
     width: 40px;
     height: 40px;
+  }
+  .faq-listing {
+    gap: 24px;
+  }
+  .faq-listing__item {
+    padding-bottom: 24px;
+  }
+  .faq-listing__button {
+    font-size: 1.6rem;
+    gap: 10px;
+  }
+  .faq-listing__content p {
+    font-size: 1.6rem;
   }
 }
