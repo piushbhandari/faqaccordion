@@ -43,13 +43,13 @@
     btn.classList.add("active");
     content.classList.add("active");
     btn.setAttribute("aria-expanded", "true");
-    content.setAttribute("aria-hidden", "true");
+    content.setAttribute("aria-hidden", "false");
   }
 
   function removeSettings(btn, content) {
     btn.classList.remove("active");
     content.classList.remove("active");
     btn.setAttribute("aria-expanded", "false");
-    content.setAttribute("aria-hidden", "false");
+    content.setAttribute("aria-hidden", "true");
   }
 })();
